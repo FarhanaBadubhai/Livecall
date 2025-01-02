@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Live Call App</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="https://cdn.100ms.live/sdk/latest/hms.js"></script>
+    </head>
+    
+    
+    
+<body>
+    <div id="auth-container">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="Auth.login(document.getElementById('email').value, document.getElementById('password').value)">Login</button>
+        <button onclick="Auth.register(document.getElementById('email').value, document.getElementById('password').value)">Register</button>
+
+    </div>
+
+    <div id="room-container" style="display:none;">
+        <div id="controls">
+            <button onclick="createRoom()">Create Room</button>
+            <button onclick="listRooms()">List Rooms</button>
+        </div>
+        
+        <div id="rooms-list"></div>
+        
+        <div id="video-container">
+            <div id="local-video"></div>
+            <div id="remote-videos"></div>
+            <div id="call-controls" style="display:none;">
+                <button onclick="toggleAudio()">Mute</button>
+                <button onclick="toggleVideo()">Video</button>
+                <button onclick="leaveRoom()">Leave</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+  
+<script src="/js/video.js"></script>
+<script src="/js/rooms.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>
